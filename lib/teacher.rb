@@ -16,4 +16,10 @@ class Teacher
   def assignment_for_student(student)
     @assignments[student]
   end
+
+  def average_grade
+    sum = 0
+    @assignments.each { |k, v| sum += v.grade }
+    sum / @assignments.length
+  end
 end
